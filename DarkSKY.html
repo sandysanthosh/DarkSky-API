@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Forecastly</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Boostrap 3 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Weather icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"> 
+
+	<!-- Font awesome -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Font Import -->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600' rel='stylesheet'> -->
+
+	<link href="https://fonts.googleapis.com/css?family=Pacifico|Cookie|Lora" rel="stylesheet">
+
+	<!-- Custom style -->
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Moment.JS script -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js'></script>
+
+	<!-- Custom script -->
+	<script type="text/javascript" src="js/main.js"></script>
+    <style>
+    h1 {
+  font-family: 'Cookie';
+  text-align: center;
+  font-weight: bold;
+  color: #212121;
+  font-size: 50px;
+}
+
+p {
+  font-family: 'Catamaran', sans-serif;
+}
+
+
+.weather{
+  color: #858585;
+  /*background: #e0ffff; */
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO1WE9yC5sYWVZXP9AnMK_ImZNZBBGRn4RWcd_Ito1szk8t3Ae-w);
+  background-size: cover;
+
+}
+
+.weather-body {
+  /*border: 0.2px solid;
+  border-color: #fff;*/
+  /*background-color: white;*/
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.temperature {
+  margin-top: 50px;
+}
+
+.daily {
+  margin-top: 30px;
+} 
+
+.today-summary {
+  margin-top: 20px;
+}
+
+ .year {
+   font-size: 15px;
+   margin-top: 16px;
+   margin-left: 20px;
+   color:  #212121;
+   font-family: 'Lora';
+ }
+
+ /* Smaller Phone */
+ @media (min-width: 320px) {
+   .year {
+     font-size: 10px;
+     margin-top: 120px;
+     margin-left: -3px;
+   }
+ }
+
+ /* Smart Phone */
+ @media (min-width: 767px) {
+   .year {
+     font-size: 20px;
+     margin-top: 120px;
+     margin-left: -3px;
+   }
+ }
+
+ /* Laptop */
+ @media (min-width: 992px) {
+   .year {
+     font-size: 15px;
+   }
+ }
+
+ .month {
+  font-family: 'Lora';
+  color:  #212121;
+ }
+ 
+
+ 
+ .date0 {
+   padding-top: 125px;
+   font-family: 'Lora';
+   font-weight: 800;
+   color:  #212121;
+ }
+
+/* Small Phone */
+ @media (min-width: 320px) {
+   .date0 {
+   padding-top: 0px;
+   }
+ }
+
+ /* Smart Phone */ 
+ @media (min-width: 767px) {
+  .date0 {
+   padding-top: 0px;
+   }
+ }
+
+
+/* Laptop */
+ @media (min-width: 992px) {
+   .date0 {
+   padding-top: 185px;
+   font-weight: 800;
+   }
+ }
+
+/* Bigger Laptops */
+ @media (min-width: 1024px) {
+   .date0 {
+   padding-top: 95px;
+   font-weight: 800;
+   }
+ }
+
+ @media (min-width: 1199px) {
+   .date0 {
+   padding-top: 95px;
+   }
+ }
+
+ @media (min-width: 1200px) {
+   .date0 {
+   padding-top: 127px;
+
+   }
+ }
+
+/* Desktop */
+ @media (min-width: 1440px) {
+   .date0 {
+   padding-top: 95px;
+   font-weight: 800;
+
+   }
+ }
+ 
+ .day0 {
+   font-size: 25px;
+   color: #212121;
+   font-family: 'Lora';
+ }
+ 
+ .day1,
+ .day2,
+ .day3,
+ .day4,
+ .day5,
+ .day6 {
+   font-size: 20px;
+   color: #4b4c4c;
+   font-family: 'Lora';
+ }
+ 
+ .date0 {
+   font-size: 25px;
+   line-height: 55px;
+   color: #828282;
+   font-family: 'Lora';
+ }
+ /* Smart Phone */
+ 
+ @media(min-width: 767px) {
+   .date0 {
+     font-size: 12px;
+     font-family: 'Lora';
+     color:  #212121;
+   }
+ }
+ 
+ .date1,.date2,.date3,.date4,.date5,.date6 {
+   font-size: 20px;
+   line-height: 20px;
+   color: #4b4c4c;
+   font-family: 'Lora';
+ }
+
+ /* Smart Phone */
+ @media(min-width: 767px) {
+   .date1,
+   .date2,
+   .date3,
+   .date4,
+   .date5 {
+     font-size: 20px;
+   }
+ }
+
+
+.time {
+   color: #212121;
+   font-size: 25px;
+   font-family: 'Lora';
+ }
+ /* Smart Phone */
+ 
+ @media (min-width: 767px) {
+   .time {
+     font-size: 24px;
+     font-family: 'Lora';
+   }
+ }
+ /* Laptop */
+ 
+ @media (min-width: 992px) {
+   .time {
+     font-size: 25px;
+     font-family: 'Lora';
+   }
+ }
+
+
+.temp0 {
+   color: #212121;
+   font-size: 30px;
+   font-weight: bold;
+   line-height: 50px;
+ }
+ /* Smart Phone */
+ 
+ @media (min-width: 767px) {
+   .temp0 {
+     color: #212121;
+     font-size: 28px;
+   }
+ }
+ /* Laptop */
+ 
+ @media (min-width: 992px) {
+   .temp0 {
+     font-size: 30px;
+     color: #212121;
+   }
+ }
+
+.temp1, .temp2, .temp3, .temp4, .temp5, .temp6 {
+    color: #4b4c4c;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+    /*line-height: 20px;*/
+}
+
+
+.forecast0 {
+   color: #212121;
+   font-size: 15px;
+   padding-left: 15px;
+   font-family: 'Lora';
+ }
+
+
+.forecast1, .forecast2, .forecast3, .forecast4, .forecast5, .forecast6 {
+  color: #4b4c4c;
+  font-size: 12px;
+  font-family: 'Lora';
+  line-height: 1.5;
+}
+
+
+.icon0 {
+   color: #212121;
+   font-size: 72px;
+   margin-top: 40px;
+   /*background-color: #000;*/
+   border-radius: 10px;
+   padding: 10px;
+ }
+ /* Smaller Phone */
+ 
+ @media (min-width: 320px) {
+   .icon0 {
+     color: #212121;
+     font-size: 60px;
+     /*background-color: #000;*/
+     border-radius: 10px;
+     padding: 10px;
+   }
+ }
+ /* Smart Phone */
+ 
+ @media (min-width: 767px) {
+   .icon0 {
+     color: #212121;
+     font-size: 55px;
+     /*background-color: #000;*/
+     border-radius: 10px;
+     padding: 10px;
+   }
+ }
+ /* Laptop */
+ 
+ @media (min-width: 992px) {
+   .icon0 {
+     color: #212121;
+     font-size: 72px;
+     /*background-color: #000;*/
+     border-radius: 10px;
+     padding: 10px;
+   }
+ }
+
+.icon1, .icon2, .icon3, .icon4, .icon5, .icon6 {
+  color: #212121
+}
+ 
+ .location {
+   color:  #212121;
+   font-size: 15px;
+   font-family: 'Lora';
+ }
+ /* Smart Phone */
+ 
+ @media (min-width: 767px) {
+   .location {
+     font-size: 10px;
+     font-family: 'Lora';
+   }
+ }
+ /* Laptop */
+ 
+ @media (min-width: 992px) {
+   .location {
+     font-size: 15px;
+     font-family: 'Lora';
+   }
+ }
+ 
+
+    </style>
+</head>
+
+<body class="weather">
+	<div class="container-fluid">
+		
+
+			
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<h1> Forecastly </h1>
+					<div class="weather-body">
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="icon0"></div>
+										<!-- <div class="forecast0"></div> -->
+									</div>
+									
+
+									<div class="col-md-6 temperature">
+										<span class="temp0"></span>
+										<div class="convertTemp">
+											<button type="button" id="temp-unit" class="btn btn-primary">C&deg;</button>
+											<button type="button" id="temp-unit" class="btn btn-primary">F&deg;</button>
+										</div>
+									</div>
+									<!-- <div class="forecast0"></div> -->
+								</div>
+							</div>
+
+							<div class="col-md-6 temperature">
+								<div>
+									<span class="day0"></span>, 
+									<span class="time"></span>
+								</div>
+								<div>
+									<span class="date0"></span>
+									<span class="month"></span>,
+									<span class="year"></span>
+								</div>
+								<div class="location"></div>
+								<!-- <div class="country text-center"></div> -->
+							</div>
+						</div>
+
+						<div class="row today-summary">
+							<div class="col-md-12">
+								<div class="forecast0"></div>
+							</div>
+						</div>
+						<!-- End current day's forecast -->
+
+						
+						<div class="row daily">
+
+							<!-- Start day1 forecast -->
+							<div class="col-md-2">
+								<div class="day1 text-uppercase text-center"></div><br/>
+								<div class="date1 text-center"></div>
+								<div class="temp1 text-center"></div>
+								<div class="icon1 text-center"></div>
+								<div class="forecast1 text-center"></div>
+							</div>
+							<!-- End day1 forecast -->
+
+							<!-- Start day2 forecast -->
+							<div class="col-md-2">
+								<div class="day2 text-uppercase text-center"></div><br/>
+								<div class="date2 text-center"></div>
+								<div class="temp2 text-center"></div>
+								<div class="icon2 text-center"></div>
+								<div class="forecast2 text-center"></div>
+							</div>
+							<!-- End day2 forecast -->
+
+							<!-- Start day3 forecast -->
+							<div class="col-md-2">
+								<div class="day3 text-uppercase text-center"></div><br/>
+								<div class="date3 text-center"></div>
+								<div class="temp3 text-center"></div>
+								<div class="icon3 text-center"></div>
+								<div class="forecast3 text-center"></div>
+							</div>
+							<!-- End day3 forecast -->
+
+							<!-- Start day4 forecast -->
+							<div class="col-md-2">
+								<div class="day4 text-uppercase text-center"></div><br/>
+								<div class="date4 text-center"></div>
+								<div class="temp4 text-center"></div>
+								<div class="icon4 text-center"></div>
+								<div class="forecast4 text-center"></div>
+							</div>
+							<!-- End day4 forecast -->
+
+							<!-- Start day5 forecast -->
+							<div class="col-md-2">
+								<div class="day5 text-uppercase text-center"></div><br/>
+								<div class="date5 text-center"></div>
+								<div class="temp5 text-center"></div>
+								<div class="icon5 text-center"></div>
+								<div class="forecast5 text-center"></div>
+							</div>
+							<!-- End day5 forecast -->
+
+							<!-- Start day6 forecast -->
+							<div class="col-md-2">
+								<div class="day6 text-uppercase text-center"></div><br/>
+								<div class="date6 text-center"></div>
+								<div class="temp6 text-center"></div>
+								<div class="icon6 text-center"></div>
+								<div class="forecast6 text-center"></div>
+							</div>
+							<!-- End day6 forecast -->
+
+						</div>
+					</div>
+					<p>Powered by <a href="https://darksky.net/">DarkSky</a></p>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(function(position) {
+		var lat = position.coords.latitude;
+		var long = position.coords.longitude;
+		var corsUrl = "https://cors-anywhere.herokuapp.com/"
+		var apiKey = "b957b35d837a7435ccd78c535af289ed";
+		var api = "https://api.darksky.net/forecast/";
+		var url = corsUrl + api + apiKey + "/" + lat + "," + long  + "?daily";
+
+		//make farenheit temperature default temperature upon page load
+
+		var tempFahrenheit = true;
+
+		//array to calculate each unit once and flip whenever user pleases
+		var temperature = {
+			fahrenheit: [],
+			celsius:[]
+		};
+
+		function inputData(array){
+			//assigns either F or C to temperature unit
+
+			var tempUnit = tempFahrenheit ? "&deg;F" : "&deg;C";
+
+			return $.each(array,function(index, value) {
+				$('.temp' + index).html(value + tempUnit);
+			});
+		}
+
+		$('.convertTemp').click(function() {
+			tempFahrenheit =!tempFahrenheit;
+
+			if (tempFahrenheit) {
+				inputData(temperature.fahrenheit);
+			} else {
+				inputData(temperature.celsius);
+			}
+		});
+
+
+		$.getJSON(url, function(json) {
+			//shows the following weather info
+
+			var fahrenheitTemp;
+			var celsiusTemp;
+			var tempData;
+			var icon;
+			var forecast;
+			var day;
+			var date;
+
+			//loop through the array for the different days
+
+			for (i = 0; i < json.daily.data.length; i++) {
+				fahrenheitTemp = Math.round(json.daily.data[i].apparentTemperatureMax);
+				celsiusTemp = Math.round((fahrenheitTemp - 32)/1.8);
+
+				temperature.celsius.push(celsiusTemp);
+				temperature.fahrenheit.push(fahrenheitTemp);
+
+				//display appropriate icon upon load on page
+
+				icon = json.daily.data[i].icon;
+				$('.icon' + i).html("<i class='wi wi-forecast-io-" + icon + "'></i>");
+
+				//display abrieved data and display on page
+
+				forecast = json.daily.data[i].summary;
+				$('.forecast' + i).html(forecast);
+
+				//display day and date on page
+
+				day = moment().add(i, "day").format("ddd");
+				$('.day' + i).html(day);
+
+
+				date = moment().add(i, "day").format("Do");
+				$('.date' + i).html(date);
+			} 
+
+			//display temperature data on page
+			inputData(temperature.fahrenheit);
+	});
+
+		//To get user's location using google maps API
+
+		var googleMapsAPIKey = "AIzaSyCH2BPbBsLP25LfNlqo3C_Hp_QswPc1fsY";
+
+		var googleMapsUrl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
+
+		var userAddress = googleMapsUrl + lat + "," + long + "&key=" + googleMapsAPIKey;
+
+		/*var searchUrl = */
+		var location;
+
+		$.getJSON(userAddress, function(json) {
+			for (i = 0; i <json.results.length; i++) {
+				location = json.results[1].formatted_address;
+				$('.location').html(location);
+			}
+		});
+
+
+		//display current time, date, month , year
+
+		var dateTimeString = moment().format("LT");
+		$('.time').html(dateTimeString);
+
+		var date = moment().format("Do");
+		$('.date').html(date);
+
+		var month = moment().format("MMMM");
+		$('.month').html(month);
+
+		var year = moment().format("YYYY");
+		$('.year').html(year);
+
+	});
+}
+
+
+	/*$.getJSON(fullURL, function(json) {
+			// Display weather information
+			var fahrenheitTemp;
+			var celsiusTemp;
+			var tempData;
+			var icon;
+			var desc;
+			var dayName;
+			var dayNum;
+			// Set up the loop to go through the daily array
+			for (i = 0; i < json.daily.data.length; i++) {
+				// Format temp data
+				fahrenheitTemp = Math.round(json.daily.data[i].apparentTemperatureMax);
+				celsiusTemp = Math.round((fahrenheitTemp - 32) / 1.8);*/
+</script>
+
+</html>
